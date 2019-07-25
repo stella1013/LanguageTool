@@ -4,9 +4,9 @@ import { AppState } from '../../redux/store';
 import { Card, Row, Button } from 'react-bootstrap';
 import AppTitleContainer from './AppTitleContainer';
 import ProgressBarContainer from './ProgressBarContainer';
-import PageListContainer from './PageListContainer';
 import { modeOperations } from '../../redux/ModeController';
 import { ScreenTypes } from '../../redux/ModeController/constants';
+import DocumentContainer from './DocumentContainer';
 
 class EditorContainer extends React.Component<ReduxType> {
 	backButtonHandler = (e: React.MouseEvent) => {
@@ -30,7 +30,7 @@ class EditorContainer extends React.Component<ReduxType> {
 						
 						
 						<ProgressBarContainer />
-						<PageListContainer />
+						<DocumentContainer />
 					</Card.Body>
 				</Card>
 			</Row>

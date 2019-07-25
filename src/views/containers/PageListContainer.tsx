@@ -7,14 +7,28 @@ import PageNavigationContainer from './PageNavigationContainer';
 
 
 interface PageState{
-	pages:[]
+	pages:[{}]
 }
 class PageListContainer extends React.Component<any, PageState> {
 	constructor(props:any){
 		super(props);
 		this.state = {
-			pages:[]
+			pages:[
+						{
+							elementName: 'header',
+							elementType: 'heading',
+							elementSize: 'col-4-of-4',
+							elementConfig: {
+								type: 'text',
+								placeholder: 'Guidelines',
+								showInput: true
+							},
+							selectedValue: { value: 'Advertising', displayValue: 'Advertising' }
+						}
+				]
 		}
+					
+			
 	}
 	componentDidMount(){
 		this.setState({pages:this.props.data});
@@ -23,7 +37,7 @@ class PageListContainer extends React.Component<any, PageState> {
 	render() {
 		
 		let pages: any = null;
-		if (this.state.pages.length > 0) {
+		if (this.state.pages) {
 			
 			pages = (
 				<div>

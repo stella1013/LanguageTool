@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Form } from 'react-bootstrap';
+import {Form } from 'react-bootstrap';
 
 interface LocalState {
 	showInput: boolean;
@@ -38,10 +38,12 @@ class BSInputFieldContainer extends React.Component<any, LocalState> {
 					placeholder={this.props.placeholder}
 					value={this.props.value}
 					onChange={this.props.changed}
-					id={this.props.id}
-					multiple
+                    id={this.props.id}
+                    multiple
 				/>
-				<Form.Text className="text-muted">{this.props.desc}</Form.Text>
+				<Form.Text className="text-muted">
+					{this.props.desc}
+				</Form.Text>
 			</Form.Group>
 		);
 	}

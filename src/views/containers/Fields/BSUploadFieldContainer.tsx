@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Form } from 'react-bootstrap';
 
 interface LocalState {
 	menuState: string;
@@ -60,23 +59,15 @@ class BSUploadFieldContainer extends React.Component<any, LocalState> {
 	}
 
 	render() {
-		return (
-			<div>
-                <Form.Group controlId={this.props.elementName}>
-				<Form.Label>{this.props.label}</Form.Label>
-				<Form.Control
-					type={this.props.type}
-					placeholder={this.props.placeholder}
-					value={this.props.value}
-					onChange={this.addFile}
-                    id={this.props.id}
-                    accept="image/png, image/jpeg"
-				/>
-				<Form.Text className="text-muted">
-					{this.props.desc}
-				</Form.Text>
-			</Form.Group>
-            </div>
+		return (<div>
+				<label className="form-label">{this.props.label}</label>
+				<div className="custom-file">
+				<input type={this.props.type} className="custom-file-input" id={this.props.elementType}/>
+				<label className="custom-file-label" >Choose file</label>
+				</div>
+				<div className="text-muted form-text small">{this.props.desc}</div>
+					
+				</div>
 		);
 	}
 }

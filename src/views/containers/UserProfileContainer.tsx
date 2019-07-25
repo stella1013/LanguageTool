@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { AppState } from '../../redux/store';
-import { Card, Row, Button } from 'react-bootstrap';
+import { Card, Row} from 'react-bootstrap';
 import { modeOperations } from '../../redux/ModeController';
 import { ScreenTypes } from '../../redux/ModeController/constants';
 

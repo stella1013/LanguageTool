@@ -2,7 +2,7 @@ import * as constants from './constants';
 import { AppAuthState } from '../types';
 
 const initialState: AppAuthState = {
-	isAuth: false
+	isAuth: true
 };
 
 const appAuth = (

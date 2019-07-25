@@ -1,7 +1,7 @@
 import * as React from 'react';
 // import { Row, Col } from 'react-bootstrap';
 import CustomInput from './Fields/CustomInput';
-import { InputField, DropDown, FileUpload, Header } from './Fields/FieldTypes';
+import { InputField, DropDown, FileUpload, Header } from '../../redux/types';
 
 interface FormState {
 	isReady: boolean;
@@ -41,18 +41,22 @@ class FormContainer extends React.Component<any, FormState> {
 						let elementConfig = formElement.config.elementConfig
 							? formElement.config.elementConfig
 							: null;
+						let selectedValue = formElement.config.selectedValue
+						? formElement.config.selectedValue
+						: null;
 						return (
 							<CustomInput
 								data-test="form-fields"
 								required="true"
 								key={formElement.id}
 								ident={formElement.id}
+							//	options={formElement.config}
 								id={formElement.id}
 								elementType={formElement.config.elementType}
 								size={formElement.config.elementSize}
 								elementConfig={elementConfig}
-								value={formElement.config.selectedValue.value}
-								displayValue={formElement.config.selectedValue.displayValue}
+								value={selectedValue.value}
+								displayValue={selectedValue.displayValue}
 								//postLabel={formElement.config.postLabel}
 								changed={
 									// this.inputChangedHandler

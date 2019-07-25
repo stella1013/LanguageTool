@@ -1,19 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+//import { createStore } from 'redux';
+//import rootReducer from './store/reducers';
 import { Provider } from 'react-redux';
+import App from './views/containers/App';
+import * as serviceWorker from './serviceWorker';
 
-import store from './store/store';
 
-import 'index.css';
-import 'style.css';
-import App from 'views/containers/App';
-import * as serviceWorker from 'serviceWorker';
+import store from './redux/store';
+import './style.css';
+//const store = createStore(rootReducer);
 
-// tslint:disable-next-line:max-line-length
 ReactDOM.render(
-	
 	<Provider store={store}>
-		<App />
+	<App/>
 	</Provider>,
 	document.getElementById('root')
 );

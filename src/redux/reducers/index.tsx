@@ -8,12 +8,13 @@ import appAuthReducer from '../Authentication/reducer';
 import authUIReducer from '../AuthForm/reducer';
 import { combineReducers } from 'redux';
 export default combineReducers({
-	data: dataReducer,
-	authUI: authUIReducer,
-	modal: modalReducer,
-	progressBar: progressBarReducer,
-	appTitle: appTitleReducer,
-	modeController: modeControllerReducer,
-	pagelist: pageListReducer,
-	appAuth: appAuthReducer
+    
+    data:dataReducer,
+    authUI:authUIReducer,
+    modal:modalReducer,
+    progressBar:progressBarReducer,
+    appTitle:appTitleReducer,
+    modeController:modeControllerReducer,
+    pagelist:pageListReducer,
+    appAuth: appAuthReducer
 });

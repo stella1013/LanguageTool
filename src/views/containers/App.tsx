@@ -8,7 +8,7 @@ import EditorContainer from './EditorContainer';
 import PreviewContainer from './PreviewContainer';
 import SuccessContainer from './SuccessContainer';
 import { modalOperations } from '../../redux/Modal';
-import { appTitleOperations, appTitleSelectors } from '../../redux/AppTitle';
+import { appTitleOperations } from '../../redux/AppTitle';
 import { ScreenTypes } from '../../redux/ModeController/constants';
 import AuthContainer from './Auth/AuthContainer';
 import UserProfileContainer from './UserProfileContainer';
@@ -59,7 +59,7 @@ class App extends React.Component<ReduxType> {
 			<div>
 			<Navbar bg="dark" variant="dark">
 				<Navbar.Brand href="#home">
-				{this.props.isAuth ? ' User Name' : this.props.appTitle}
+				{this.props.isAuth ? ' Florida Cancer Specialists' : 'Asset Ingesting Application'}
 				</Navbar.Brand>
 				<Navbar.Collapse className="justify-content-end">
 					<Navbar.Text>
@@ -80,8 +80,7 @@ const mapStateToProps = (state: AppState) => {
 	return {
 		data: state.data.pages,
 		modeController: state.modeController.currentMode,
-		isAuth: state.appAuth.isAuth,
-		appTitle: appTitleSelectors.getAppTitleSelectorMemo(state)
+		isAuth: state.appAuth.isAuth
 	};
 };
 const mapDispatchToProps = (dispatch: any) => {

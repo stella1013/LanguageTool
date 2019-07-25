@@ -44,21 +44,21 @@ class AuthContainer extends React.Component<ReduxType> {
 		
 	}
 	render() {
-		const formElementsArray = [];
+		const loginformElementsArray = [];
 
 		if (this.props.authform.controls) {
 			let key: any;
 			for (key in this.props.authform.controls) {
-				formElementsArray.push({
+				loginformElementsArray.push({
 					id: key,
 					config: this.props.authform.controls[key]
 				});
 			}
 		}
 
-		let form: any = null;
-		if (formElementsArray.length > 0) {
-			form = formElementsArray.map((formElement: any) => {
+		let loginform: any = null;
+		if (loginformElementsArray.length > 0) {
+			loginform = loginformElementsArray.map((formElement: any) => {
 				let elementConfig = formElement.config.elementConfig
 					? formElement.config.elementConfig
 					: null;
@@ -94,7 +94,7 @@ class AuthContainer extends React.Component<ReduxType> {
 		return (
 			<div data-test="component-auth">
 				<form>
-				{form}
+				{loginform}
 				<p>Forgot your Password?</p>
 				<Button onClick={(e:React.MouseEvent)=>this.submitHandler(e)} >Submit</Button>
 				</form>

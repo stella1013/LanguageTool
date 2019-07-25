@@ -1,11 +1,11 @@
-import authUI from './reducer';
-import { SET_LOGIN_FIELDS } from './constants';
+import authUIReset from './reducer';
+import { SET_PASSWORD_FIELDS } from './constants';
 
 describe('authUI reducer', ()=>{
-    const data = {email:'mail@mail.com', password:'some password'};
+    const data = 'mail@mail.com';
     it('sets the login fields for authentication', ()=>{
-        const newState = authUI(undefined, {type: SET_LOGIN_FIELDS, payload: data});
-		expect(newState.controls.email.value).toBe(data.email);
-		expect(newState.controls.password.value).toBe(data.password);
+        const newState = authUIReset(undefined, {type: SET_PASSWORD_FIELDS, payload: data});
+		expect(newState.controls.password.value).toBe(data);
+		// expect(newState.controls.passwordconfirm.value).toBe(data.passwordconfirm);
     });
 })

@@ -1,9 +1,9 @@
 import * as constants from './constants';
-import { AuthState } from '../types';
+import { ResetAuthState } from '../types';
 
-const initialState: AuthState = {
+const initialState: ResetAuthState = {
 	controls: {
-		email: {
+		password: {
 			elementType: 'input',
 			elementConfig: {
 				type: 'email',
@@ -17,7 +17,7 @@ const initialState: AuthState = {
 			valid: false,
 			touched: false
 		},
-		password: {
+		passwordconfirm: {
 			elementType: 'input',
 			elementConfig: {
 				type: 'password',
@@ -34,23 +34,19 @@ const initialState: AuthState = {
 	}
 };
 
-const authUI = (
+const authUIReset = (
 	state = initialState,
-	action: constants.AuthUIActionTypes
-): AuthState => {
+	action: constants.PasswordResetActionTypes
+): ResetAuthState => {
 	switch (action.type) {
-		case constants.SET_LOGIN_FIELDS:
+		case constants.SET_PASSWORD_FIELDS:
 			return {
 				...state,
 				controls: {
 					...state.controls,
-					email: {
-						...state.controls.email,
-						value: action.payload.email
-					},
 					password: {
 						...state.controls.password,
-						value: action.payload.password
+						value: action.payload
 					}
 				}
 			};
@@ -58,4 +54,4 @@ const authUI = (
 			return state;
 	}
 };
-export default authUI;
+export default authUIReset;

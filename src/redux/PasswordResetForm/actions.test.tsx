@@ -36,6 +36,6 @@ describe('Password Fields UI', ()=>{
         }
         };
         const expectedAction = { type: constants.SET_PASSWORD_FIELDS, payload:data};
-        expect(passwordResetUIOperations.setPasswordResetFields(data)).toEqual(expectedAction);
+       expect(passwordResetUIOperations.setPasswordResetFields('hello')).toEqual(expectedAction);
     });
 });
